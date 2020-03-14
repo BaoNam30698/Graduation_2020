@@ -110,7 +110,7 @@ namespace Graduation.App.Web
                     )
                 );
 
-            //Home-Index Bundles
+            //Application-Home Bundles
             bundles.Add(
                 new ScriptBundle("~/Bundles/home-index")
                     .Include(
@@ -124,6 +124,39 @@ namespace Graduation.App.Web
                         "~/lib/Flot/jquery.flot.categories.js",
                         "~/lib/Flot/jquery.flot.time.js",
                         "~/lib/jquery-sparkline/dist/jquery.sparkline.js"
+                    )
+            );
+
+            // FrontEnd/Home
+
+            bundles.Add(
+                new StyleBundle("~/Bundles/frontEnd/Home/css")
+                    .Include("~/frontEnd/Home/css/open-iconic-bootstrap.min.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/animate.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/owl.carousel.min.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/owl.theme.default.min.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/magnific-popup.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/aos.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/ionicons.min.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/flaticon.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/icomoon.css", new CssRewriteUrlTransform())
+                    .Include("~/frontEnd/Home/css/style.css", new CssRewriteUrlTransform())
+            );
+
+            bundles.Add(
+                new ScriptBundle("~/Bundles/frontEnd/Home/js")
+                    .Include(
+                        "~/frontEnd/Home/js/jquery.min.js",
+                        "~/frontEnd/Home/js/jquery-migrate-3.0.1.min.js",
+                        "~/frontEnd/Home/js/popper.min.js",
+                        "~/frontEnd/Home/js/jquery.easing.1.3.js",
+                        "~/frontEnd/Home/js/jquery.waypoints.min.js",
+                        "~/frontEnd/Home/js/jquery.stellar.min.js",
+                        "~/frontEnd/Home/js/owl.carousel.min.js",
+                        "~/frontEnd/Home/js/jquery.magnific-popup.min.js",
+                        "~/frontEnd/Home/js/jquery.animateNumber.min.js",
+                        "~/frontEnd/Home/js/scrollax.min.js",
+                        "~/frontEnd/Home/js/home.js"
                     )
             );
 

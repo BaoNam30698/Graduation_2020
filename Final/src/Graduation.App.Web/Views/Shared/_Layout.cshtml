@@ -2,6 +2,7 @@
 @using Abp.Timing
 @using Abp.Web.Mvc.Extensions
 @using Graduation.App.Configuration
+@using System.Web.Optimization
 @*
     IMPORTANT NOTES FROM ASP.NET BOILERPLATE:
 
@@ -12,8 +13,8 @@
 *@
 @{
     Layout = null;
-    SetAntiForgeryCookie();
-    var uiTheme = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
+SetAntiForgeryCookie();
+var uiTheme = SettingManager.GetSettingValue(AppSettingNames.UiTheme);
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -27,13 +28,16 @@
     <title>App</title>
 
     <link rel="shortcut icon" href="~/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:300,400,500,600,700" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 
     @Html.IncludeStyle("~/Content/themes/base/all.css")
-    @Html.IncludeStyle("~/Content/bootstrap-cosmo.min.css")
     @Html.IncludeStyle("~/Content/font-awesome.min.css")
     @Html.IncludeStyle("~/Content/toastr.min.css")
-    @Html.IncludeStyle("~/Content/flags/famfamfam-flags.css")
-    @Html.IncludeStyle("~/Scripts/sweetalert/sweet-alert.css")
+    @Html.IncludeStyle("~/lib/bootstrap/dist/css/bootstrap.css")
 
     @RenderSection("Styles", false)
 
@@ -53,16 +57,14 @@
     @Html.IncludeScript("~/Scripts/modernizr-2.8.3.js")
 
     @Html.IncludeScript("~/Scripts/json2.min.js")
-    @Html.IncludeScript("~/Scripts/jquery-3.2.1.min.js")
+    @Html.IncludeScript("~/Scripts/jquery-3.3.1.min.js")
     @Html.IncludeScript("~/Scripts/jquery-ui-1.12.1.min.js")
     @Html.IncludeScript("~/Scripts/bootstrap.min.js")
 
     @Html.IncludeScript("~/Scripts/jquery.validate.min.js")
     @Html.IncludeScript("~/Scripts/jquery.blockUI.js")
     @Html.IncludeScript("~/Scripts/toastr.min.js")
-    @Html.IncludeScript("~/Scripts/others/spinjs/spin.js")
-    @Html.IncludeScript("~/Scripts/others/spinjs/jquery.spin.js")
-    @Html.IncludeScript("~/Scripts/sweetalert/sweet-alert.min.js")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     @Html.IncludeScript("~/Abp/Framework/scripts/abp.js")
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.jquery.js")
@@ -71,13 +73,15 @@
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.spin.js")
     @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.sweet-alert.js")
 
+    
+
     <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
     <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
     <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
 
     @RenderSection("Scripts", false)
 </head>
-<body class="@("theme-" + uiTheme)">
+<body >
     @RenderBody()
 </body>
 </html>
