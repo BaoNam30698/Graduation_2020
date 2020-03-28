@@ -60,10 +60,6 @@
                     url: '/about',
                     templateUrl: '/App/Main/views/about/about.cshtml',
                     menu: 'About' //Matches to name of 'About' menu in AppNavigationProvider
-                }).state('Nam', {
-                    url: '/nam',
-                    templateUrl: '/App/Main/views/home/home.cshtml',
-                    menu: 'Home' //Matches to name of 'Home' menu in AppNavigationProvider
                 });
         }
     ]);

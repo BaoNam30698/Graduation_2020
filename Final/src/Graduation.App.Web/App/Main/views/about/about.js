@@ -4,6 +4,7 @@
         '$scope', function ($scope) {
             var vm = this;
             //About logic...
+            console.log('nam nam');
         }
     ]);
 })();

@@ -13,7 +13,7 @@ namespace Graduation.App.Web.Controllers
         // GET: Application
         public ActionResult Index()
         {
-            return View("~/App/Main/views/layout/layout.cshtml");//Layout of the angular application.
+            return View("~/App/Main/common/layout/layout.cshtml");//Layout of the angular application.
         }
     }
 }

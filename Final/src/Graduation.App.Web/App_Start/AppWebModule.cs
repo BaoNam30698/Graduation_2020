@@ -48,10 +48,10 @@ namespace Graduation.App.Web
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BundleAppConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

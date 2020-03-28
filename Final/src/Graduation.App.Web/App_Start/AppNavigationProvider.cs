@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Navigation;
+using Abp.Authorization;
 using Abp.Localization;
 using Graduation.App.Authorization;
 
@@ -52,7 +53,15 @@ namespace Graduation.App.Web
                         url: "#/about",
                         icon: "fa fa-info"
                         )
-                );
+                    //.AddItem(new MenuItemDefinition(
+                    //    "About",
+                    //    new LocalizableString("About", AppConsts.LocalizationSourceName),
+                    //    url: "#/about",
+                    //    icon: "fa fa-info",
+                    //    permissionDependency:new SimplePermissionDependency("About.item1")
+                    //    )
+                    //)
+            );
         }
 
         private static ILocalizableString L(string name)
